@@ -2,6 +2,11 @@ package ru.reksoft;
 
 class Lesson2 {
 
+    public static void main(String[] args) {
+        System.out.println("y = " + formula(3));
+        System.out.println("Инициалы: " + initials("иванов петр Александрович"));
+    }
+
     /**
      * Нужно реализовать формулу y = √(13x + 13/x)
      * Подсказка: квадратный корень вычисляется функцией Math.sqrt()
@@ -10,8 +15,11 @@ class Lesson2 {
      * @return возвращаем только целую часть от полученного результата,
      * хвост отбрасываем без откругления
      */
-    static int formula(int x) {
-        return 0;
+    static double formula(int x) {
+        double y;
+        y = Math.sqrt(13 * x - 13 / x);
+        int z = (int) y;
+        return z;
     }
 
     /**
@@ -27,7 +35,9 @@ class Lesson2 {
      * @return возвращаем инициалы в верхнем регистре разделенные точкой, как в примере выше
      */
     static String initials(String fullName) {
-        return null;
+        String [] initials = fullName.split(" ");
+        String initial = initials[0].charAt(0) + "." + initials[1].charAt(0) + "." + initials[2].charAt(0) + ".";
+        initial = initial.toUpperCase();
+        return initial;
     }
-
 }
